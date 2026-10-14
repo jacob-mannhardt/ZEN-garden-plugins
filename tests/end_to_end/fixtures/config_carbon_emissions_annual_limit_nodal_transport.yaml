@@ -1,0 +1,8 @@
+solver:
+  keep_files: false
+plugins:
+  carbon_emissions_annual_limit_nodal:
+    include_carbon_transport: true
+    # test_1a has no carbon carrier, so natural gas stands in for it
+    carbon_carrier: natural_gas
+    carbon_storage_technology: natural_gas_boiler

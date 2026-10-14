@@ -1,0 +1,5 @@
+solver:
+  keep_files: false
+plugins:
+  carbon_emissions_annual_limit_nodal:
+    include_carbon_transport: true
