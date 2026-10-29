@@ -18,10 +18,10 @@ from zen_garden_plugins.tech_share_limits.constraints import (
     TechShareOfInputConstraint,
 )
 from zen_garden_plugins.tech_share_limits.parameters import (
-    DemandShareMaxByTech,
-    DemandShareMinByTech,
-    InputShareMaxByTech,
-    InputShareMinByTech,
+    DemandShareMax,
+    DemandShareMin,
+    InputShareMax,
+    InputShareMin,
 )
 
 
@@ -75,10 +75,10 @@ def add_tech_share_limits(model_schema: ModelSchema) -> None:
     parameters: list[type[GenericParameter]] = []
     constraints: list[type[GenericConstraint]] = []
     if config["include_demand_share"]:
-        parameters.extend([DemandShareMaxByTech, DemandShareMinByTech])
+        parameters.extend([DemandShareMax, DemandShareMin])
         constraints.append(TechShareOfFinalDemandConstraint)
     if config["include_input_share"]:
-        parameters.extend([InputShareMaxByTech, InputShareMinByTech])
+        parameters.extend([InputShareMax, InputShareMin])
         constraints.append(TechShareOfInputConstraint)
 
     conversion_technology = model_schema.element_type_classes["ConversionTechnology"]

@@ -31,7 +31,7 @@ class TechShareOfFinalDemandConstraint(TechShareConstraint):
         - :math:`D_{c,n,t}`: demand of carrier :math:`c` at node :math:`n`
         - :math:`\\overline{\\alpha}_{i,c,n,y}`,
           :math:`\\underline{\\alpha}_{i,c,n,y}`: maximum and minimum share
-          (``demand_share_max_by_tech``, ``demand_share_min_by_tech``)
+          (``demand_share_max``, ``demand_share_min``)
 
         The upper bound is only added where the maximum share is finite, the
         lower bound only where the minimum share is positive. Neither is added
@@ -50,12 +50,12 @@ class TechShareOfFinalDemandConstraint(TechShareConstraint):
         for name, share, is_lower_bound in (
             (
                 "constraint_tech_share_of_final_demand_max",
-                parameters.demand_share_max_by_tech,
+                parameters.demand_share_max,
                 False,
             ),
             (
                 "constraint_tech_share_of_final_demand_min",
-                parameters.demand_share_min_by_tech,
+                parameters.demand_share_min,
                 True,
             ),
         ):

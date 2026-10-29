@@ -34,7 +34,7 @@ class TechShareOfInputConstraint(TechShareConstraint):
         - :math:`\\mathcal{I}`: set of conversion technologies
         - :math:`\\overline{\\beta}_{i,c,n,y}`,
           :math:`\\underline{\\beta}_{i,c,n,y}`: maximum and minimum share
-          (``input_share_max_by_tech``, ``input_share_min_by_tech``)
+          (``input_share_max``, ``input_share_min``)
 
         The upper bound is only added where the maximum share is finite, the
         lower bound only where the minimum share is positive.
@@ -47,12 +47,12 @@ class TechShareOfInputConstraint(TechShareConstraint):
         for name, share, is_lower_bound in (
             (
                 "constraint_tech_share_of_input_max",
-                parameters.input_share_max_by_tech,
+                parameters.input_share_max,
                 False,
             ),
             (
                 "constraint_tech_share_of_input_min",
-                parameters.input_share_min_by_tech,
+                parameters.input_share_min,
                 True,
             ),
         ):

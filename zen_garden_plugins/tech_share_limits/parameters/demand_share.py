@@ -3,14 +3,14 @@
 from .tech_share_parameter import TechShareParameter
 
 
-class DemandShareMaxByTech(TechShareParameter):
+class DemandShareMax(TechShareParameter):
     """Maximum yearly share of a carrier's demand a technology may supply.
 
     Defaults to ``inf``, so the constraint is only added where a finite value
     is given.
     """
 
-    name = "demand_share_max_by_tech"
+    name = "demand_share_max"
     indices = (
         "set_conversion_technologies",
         "set_output_carriers",
@@ -25,14 +25,14 @@ class DemandShareMaxByTech(TechShareParameter):
     default_value = "inf"
 
 
-class DemandShareMinByTech(TechShareParameter):
+class DemandShareMin(TechShareParameter):
     """Minimum yearly share of a carrier's demand a technology must supply.
 
     Defaults to ``0``, so the constraint is only added where a positive value
     is given.
     """
 
-    name = "demand_share_min_by_tech"
+    name = "demand_share_min"
     indices = (
         "set_conversion_technologies",
         "set_output_carriers",

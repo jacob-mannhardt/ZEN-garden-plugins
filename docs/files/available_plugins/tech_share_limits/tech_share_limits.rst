@@ -39,29 +39,29 @@ added where values are given.
      - Carriers
      - Default
      - Constraint added where
-   * - ``demand_share_max_by_tech``
+   * - ``demand_share_max``
      - output carriers
      - ``inf``
      - value is finite and demand is positive
-   * - ``demand_share_min_by_tech``
+   * - ``demand_share_min``
      - output carriers
      - ``0``
      - value is positive and demand is positive
-   * - ``input_share_max_by_tech``
+   * - ``input_share_max``
      - input carriers
      - ``inf``
      - value is finite
-   * - ``input_share_min_by_tech``
+   * - ``input_share_min``
      - input carriers
      - ``0``
      - value is positive
 
 Values are given in the technology folder, e.g.,
-``set_conversion_technologies/heat_pump/demand_share_max_by_tech.csv``:
+``set_conversion_technologies/heat_pump/demand_share_max.csv``:
 
 .. code-block:: text
 
-   carrier,node,year,demand_share_max_by_tech
+   carrier,node,year,demand_share_max
    heat,DE,2030,0.3
    heat,DE,2040,0.5
 
@@ -72,7 +72,7 @@ interpolated as for other yearly parameters. A default can also be set in
 
 .. code-block:: yaml
 
-   demand_share_max_by_tech:
+   demand_share_max:
      default_value: inf
      unit: '1'
 

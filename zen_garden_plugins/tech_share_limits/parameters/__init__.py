@@ -1,11 +1,11 @@
 """Parameters supplied by ``tech_share_limits``."""
 
-from .demand_share_by_tech import DemandShareMaxByTech, DemandShareMinByTech
-from .input_share_by_tech import InputShareMaxByTech, InputShareMinByTech
+from .demand_share import DemandShareMax, DemandShareMin
+from .input_share import InputShareMax, InputShareMin
 
 __all__ = [
-    "DemandShareMaxByTech",
-    "DemandShareMinByTech",
-    "InputShareMaxByTech",
-    "InputShareMinByTech",
+    "DemandShareMax",
+    "DemandShareMin",
+    "InputShareMax",
+    "InputShareMin",
 ]
