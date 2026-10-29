@@ -1,0 +1,6 @@
+solver:
+  keep_files: false
+plugins:
+  tech_share_limits:
+    include_demand_share: true
+    include_inflow_share: true
