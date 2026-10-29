@@ -96,8 +96,8 @@ def test_tech_share_limits(fixtures_path, tmp_path):
         "carrier,node,year,demand_share_max_by_tech\nheat,DE,2022,0.3\n"
     )
     # without carrier column, the share applies to all input carriers
-    (boiler / "inflow_share_min_by_tech.csv").write_text(
-        "node,year,inflow_share_min_by_tech\nCH,2022,0.8\n"
+    (boiler / "input_share_min_by_tech.csv").write_text(
+        "node,year,input_share_min_by_tech\nCH,2022,0.8\n"
     )
 
     run(

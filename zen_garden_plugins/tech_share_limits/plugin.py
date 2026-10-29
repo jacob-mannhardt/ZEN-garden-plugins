@@ -15,13 +15,13 @@ from zen_garden.model.component_types.parameter import GenericParameter
 
 from zen_garden_plugins.tech_share_limits.constraints import (
     TechShareOfFinalDemandConstraint,
-    TechShareOfInflowConstraint,
+    TechShareOfInputConstraint,
 )
 from zen_garden_plugins.tech_share_limits.parameters import (
     DemandShareMaxByTech,
     DemandShareMinByTech,
-    InflowShareMaxByTech,
-    InflowShareMinByTech,
+    InputShareMaxByTech,
+    InputShareMinByTech,
 )
 
 
@@ -33,7 +33,7 @@ class Config(ConfigBase):
         plugins:
           tech_share_limits:
             include_demand_share: true
-            include_inflow_share: true
+            include_input_share: true
     """
 
     include_demand_share: bool = Field(
@@ -43,10 +43,10 @@ class Config(ConfigBase):
             "conversion technology."
         ),
     )
-    include_inflow_share: bool = Field(
+    include_input_share: bool = Field(
         default=True,
         description=(
-            "Whether to bound the share of a carrier's conversion inflow used "
+            "Whether to bound the share of a carrier's conversion input used "
             "by a conversion technology."
         ),
     )
@@ -77,9 +77,9 @@ def add_tech_share_limits(model_schema: ModelSchema) -> None:
     if config["include_demand_share"]:
         parameters.extend([DemandShareMaxByTech, DemandShareMinByTech])
         constraints.append(TechShareOfFinalDemandConstraint)
-    if config["include_inflow_share"]:
-        parameters.extend([InflowShareMaxByTech, InflowShareMinByTech])
-        constraints.append(TechShareOfInflowConstraint)
+    if config["include_input_share"]:
+        parameters.extend([InputShareMaxByTech, InputShareMinByTech])
+        constraints.append(TechShareOfInputConstraint)
 
     conversion_technology = model_schema.element_type_classes["ConversionTechnology"]
     if not issubclass(conversion_technology, ConversionTechnology):

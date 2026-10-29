@@ -1,9 +1,9 @@
-"""Bound the share of a carrier's conversion inflow used by a technology."""
+"""Bound the share of a carrier's conversion input used by a technology."""
 
 from .tech_share_constraint import TechShareConstraint
 
 
-class TechShareOfInflowConstraint(TechShareConstraint):
+class TechShareOfInputConstraint(TechShareConstraint):
     """Limit the yearly input of a technology relative to all conversion inputs."""
 
     @classmethod
@@ -34,7 +34,7 @@ class TechShareOfInflowConstraint(TechShareConstraint):
         - :math:`\\mathcal{I}`: set of conversion technologies
         - :math:`\\overline{\\beta}_{i,c,n,y}`,
           :math:`\\underline{\\beta}_{i,c,n,y}`: maximum and minimum share
-          (``inflow_share_max_by_tech``, ``inflow_share_min_by_tech``)
+          (``input_share_max_by_tech``, ``input_share_min_by_tech``)
 
         The upper bound is only added where the maximum share is finite, the
         lower bound only where the minimum share is positive.
@@ -46,13 +46,13 @@ class TechShareOfInflowConstraint(TechShareConstraint):
         times = cls.get_year_time_step_duration_array(model_constructor)
         for name, share, is_lower_bound in (
             (
-                "constraint_tech_share_of_inflow_max",
-                parameters.inflow_share_max_by_tech,
+                "constraint_tech_share_of_input_max",
+                parameters.input_share_max_by_tech,
                 False,
             ),
             (
-                "constraint_tech_share_of_inflow_min",
-                parameters.inflow_share_min_by_tech,
+                "constraint_tech_share_of_input_min",
+                parameters.input_share_min_by_tech,
                 True,
             ),
         ):

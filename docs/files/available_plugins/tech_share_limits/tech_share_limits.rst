@@ -11,7 +11,7 @@ families of linear constraints:
 * **Share of final demand**: the yearly output of carrier :math:`c` from
   technology :math:`i` at node :math:`n` is bounded by a share of the yearly
   demand of :math:`c` at :math:`n`.
-* **Share of conversion inflow**: the yearly input of carrier :math:`c` into
+* **Share of conversion input**: the yearly input of carrier :math:`c` into
   technology :math:`i` at node :math:`n` is bounded by a share of the yearly
   input of :math:`c` into all conversion technologies at :math:`n`.
 
@@ -23,7 +23,7 @@ families are enabled by default:
    plugins:
      tech_share_limits:
        include_demand_share: true
-       include_inflow_share: true
+       include_input_share: true
 
 Parameters
 ^^^^^^^^^^
@@ -47,11 +47,11 @@ added where values are given.
      - output carriers
      - ``0``
      - value is positive and demand is positive
-   * - ``inflow_share_max_by_tech``
+   * - ``input_share_max_by_tech``
      - input carriers
      - ``inf``
      - value is finite
-   * - ``inflow_share_min_by_tech``
+   * - ``input_share_min_by_tech``
      - input carriers
      - ``0``
      - value is positive
@@ -86,7 +86,7 @@ Constraint definitions
 .. autoclass:: zen_garden_plugins.tech_share_limits.constraints.TechShareOfFinalDemandConstraint
    :members: build
 
-.. autoclass:: zen_garden_plugins.tech_share_limits.constraints.TechShareOfInflowConstraint
+.. autoclass:: zen_garden_plugins.tech_share_limits.constraints.TechShareOfInputConstraint
    :members: build
 
 Module documentation
